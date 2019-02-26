@@ -18,6 +18,7 @@ const groceriesRoutes = require('./routes/groceries');
 
 app.use(groceriesRoutes);
 
+app.get('/',(req,res)=>{res.send("show sending")})
 let db
 
 
@@ -25,7 +26,8 @@ let db
 MongoClient.connect('mongodb://Thadeusc:3501Bogan@ds157712.mlab.com:57712/grocerylist', {usernewUrlParser:true}, (err, database) => {
     if (err) return console.log(err)
     db = database.db("grocerylist")
-    app.listen(3000, function () {
+    const PORT = process.env.PORT || 3000
+    app.listen(PORT, function () {
         console.log("listening on 3000!")//taking in connection port
     })
 })
