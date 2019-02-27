@@ -12,7 +12,7 @@ router.post('/groceries', (req, res) => {
             if (err) return console.log(err)
             console.log('save to database :)')
             res.redirect('/')
-})
+    })
 })
 
 
