@@ -10,11 +10,11 @@ MongoClient.connect('mongodb://Thadeusc:3501Bogan@ds157712.mlab.com:57712/grocer
 })
  
 
-router.get('/groceries', (req, res) => {
+router.get('/', (req, res) => {
     res.send("Hello Sunshine!")
 })
 
-router.post('/groceries', (req, res) => {
+router.post('/', (req, res) => {
             console.log(req.body)
     db.collection('groceries1').save(req.body, (err, result) => {
         console.log(req.body)       
@@ -24,7 +24,7 @@ router.post('/groceries', (req, res) => {
     })
 })
 router.post('/new',(req , res)=>{
-    db.collection('/groceries1').save(req.body,(err, result)=>{
+    db.collection('groceries1').save(req.body,(err, result)=>{
     })
 })
 
