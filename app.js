@@ -29,6 +29,7 @@ let db
 app.get('/' , (req, res) => {
     res.send({hello: "hello :)"
 })
+})
 
 
 MongoClient.connect('mongodb://Thadeusc:3501Bogan@ds157712.mlab.com:57712/grocerylist', {usernewUrlParser:true}, (err, database) => {
