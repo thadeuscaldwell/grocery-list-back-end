@@ -32,13 +32,15 @@ app.get('/' , (req, res) => {
         hello: "hello :)"
 })
 })
-app.post('/AddGroceries', (req, res) => {
+app.post('/groceries', (req, res) => {
     // console.log(req.body)
-    db.collection('/grocerylist').save(req.body, (err, result) => {
+    db.collection('groceries1').save(req.body, (err, result) => {
         if (err) return console.log(err)
 
         console.log('save to database :)')
         res.redirect('/')
+    })
+})
 
 
 MongoClient.connect('mongodb://Thadeusc:3501Bogan@ds157712.mlab.com:57712/grocerylist', {usernewUrlParser:true}, (err, database) => {
