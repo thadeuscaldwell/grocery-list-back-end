@@ -24,7 +24,7 @@ router.post('/groceries', (req, res) => {
     })
 })
 router.post('/new',(req , res)=>{
-    db.collection('groceries1').save(req.body,(err, result)=>{
+    db.collection('/groceries1').save(req.body,(err, result)=>{
     })
 })
 
