@@ -27,7 +27,7 @@ app.use(function(req,res,next){
 let db
 
 app.get('/' , (req, res) => {
-    res.send("hello")
+    hello: "hello :)"
 })
 
 
