@@ -1,6 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const app = express();
+const MongoClient = require('mongodb').MongoClient
+
+let db
+
+MongoClient.connect('mongodb://Thadeusc:3501Bogan@ds157712.mlab.com:57712/grocerylist', {usernewUrlParser:true}, (err, database) => {
+    if (err) return console.log(err)
+    db = database.db("grocerylist")
+})
+ 
 
 router.get('/groceries', (req, res) => {
     res.send("Hello Sunshine!")
@@ -9,9 +17,14 @@ router.get('/groceries', (req, res) => {
 router.post('/groceries', (req, res) => {
             console.log(req.body)
     db.collection('grocerylist').save(req.body, (err, result) => {
-            if (err) return console.log(err)
+        console.log(req.body)       
+        if (err) return console.log(err)
             console.log('save to database :)')
             res.redirect('/')
+    })
+})
+router.post('/new',(req , res)=>{
+    db.collection('groceryList').save(req.body,(err, result)=>{
     })
 })
 
