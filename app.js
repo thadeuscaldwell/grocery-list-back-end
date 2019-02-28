@@ -18,7 +18,7 @@ const groceriesRoutes = require('./routes/groceries');
 
 const PORT = process.env.PORT || 3001
 
-app.use('groceries1',groceriesRoutes);
+app.use('groceries',groceriesRoutes);
 
 app.use(function(req,res,next){
     res.header('Access-Control-Allow-Origin','*');
