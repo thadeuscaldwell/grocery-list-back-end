@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
             console.log(req.body)
-    db.collection('groceries1').save(req.body, (err, result) => {
+    db.collection('groceries').save(req.body, (err, result) => {
         console.log(req.body)       
         if (err) return console.log(err)
             console.log('save to database :)')
