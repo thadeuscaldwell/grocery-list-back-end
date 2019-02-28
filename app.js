@@ -16,9 +16,9 @@ app.use(bodyParser.urlencoded({
 
 const groceriesRoutes = require('./routes/groceries');
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3001
 
-app.use('/groceries',groceriesRoutes);
+app.use('groceries1',groceriesRoutes);
 
 app.use(function(req,res,next){
     res.header('Access-Control-Allow-Origin','*');
@@ -32,22 +32,22 @@ app.get('/' , (req, res) => {
         hello: "hello :)"
 })
 })
-app.post('/groceries', (req, res) => {
-    // console.log(req.body)
-    db.collection('/groceries1').save(req.body, (err, result) => {
-        if (err) return console.log(err)
+// app.post('/groceries', (req, res) => {
+//     // console.log(req.body)
+//     db.collection('/groceries1').save(req.body, (err, result) => {
+//         if (err) return console.log(err)
 
-        console.log('save to database :)')
-        res.redirect('/')
-    })
-})
+//         console.log('save to database :)')
+//         res.redirect('/')
+//     })
+// })
 
 
 MongoClient.connect('mongodb://Thadeusc:3501Bogan@ds157712.mlab.com:57712/grocerylist', {usernewUrlParser:true}, (err, database) => {
     if (err) return console.log(err)
     db = database.db("grocerylist")
     app.listen(PORT, function () {
-        console.log("listening on 3000!")//taking in connection port
+        console.log("listening on 3001!")//taking in connection port
     })
 }) 
 

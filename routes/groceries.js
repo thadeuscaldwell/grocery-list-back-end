@@ -16,7 +16,7 @@ router.get('/groceries', (req, res) => {
 
 router.post('/groceries', (req, res) => {
             console.log(req.body)
-    db.collection('grocerylist').save(req.body, (err, result) => {
+    db.collection('groceries1').save(req.body, (err, result) => {
         console.log(req.body)       
         if (err) return console.log(err)
             console.log('save to database :)')
@@ -24,7 +24,7 @@ router.post('/groceries', (req, res) => {
     })
 })
 router.post('/new',(req , res)=>{
-    db.collection('groceryList').save(req.body,(err, result)=>{
+    db.collection('groceries1').save(req.body,(err, result)=>{
     })
 })
 
