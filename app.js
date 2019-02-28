@@ -19,15 +19,17 @@ const groceriesRoutes = require('./routes/groceries');
 const PORT = process.env.PORT || 3000
 
 app.use('/groceries',groceriesRoutes);
+
 app.use(function(req,res,next){
-    res.header('Access-Control-Allow-Orgin','*');
-    res.header('Access-Control-Allow-Headers','Orgin, X-Requested-With, Content-Type, Accept');
+    res.header('Access-Control-Allow-Origin','*');
+    res.header('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept');
     next();
 });
 let db
 
 app.get('/' , (req, res) => {
-    res.send({hello: "hello :)"
+    res.send({
+        hello: "hello :)"
 })
 })
 
