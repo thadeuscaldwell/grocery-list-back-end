@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');//
 const MongoClient = require('mongodb').MongoClient; //connect takes two parameters
+const path = require('path');
 
 
 const app = express();
@@ -38,7 +39,7 @@ app.get('/' , (req, res) => {
 
 MongoClient.connect('mongodb://Thadeusc:3501Bogan@ds157712.mlab.com:57712/grocerylist', {usernewUrlParser:true}, (err, database) => {
     if (err) return console.log(err)
-    db = database.db("grocerylist1")
+    db = database.db("grocerylist")
     app.listen(process.env.PORT || 3000, function () {
         console.log("listening on 3000!", this.address().port, app.settings.env);//taking in connection port
     })
