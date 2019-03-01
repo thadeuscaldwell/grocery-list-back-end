@@ -5,14 +5,13 @@ const path = require('path');
 
 
 const app = express();
-
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended: true}));
 
 
 const groceriesRoutes = require('./routes/groceries');
 
-const PORT = process.env.PORT || 3001
+// const PORT = process.env.PORT || 3001
 
 app.use('/groceries',groceriesRoutes);
 app.use(function(req,res,next){
@@ -40,9 +39,9 @@ app.get('/' , (req, res) => {
 
 MongoClient.connect('mongodb://Thadeusc:3501Bogan@ds157712.mlab.com:57712/grocerylist', {usernewUrlParser:true}, (err, database) => {
     if (err) return console.log(err)
-    db = database.db("grocerylist")
-    app.listen(PORT, function () {
-        console.log("listening on 3001!")//taking in connection port
+    db = database.db("grocerylist1")
+    app.listen(process.env.PORT || 3000, function () {
+        console.log("listening on 3000!", this.address().port, app.settings.env);//taking in connection port
     })
 }) 
 
