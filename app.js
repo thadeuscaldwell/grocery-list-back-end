@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');//
 const MongoClient = require('mongodb').MongoClient; //connect takes two parameters
-const path = require('path');
 
 
 const app = express();
